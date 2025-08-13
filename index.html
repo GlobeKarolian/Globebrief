@@ -1,54 +1,58 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Globe Brief</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="topbar">
-    <h1>Globe Brief</h1>
-    <div class="hud">
-      <span id="streakFlame" title="Daily streak">🔥</span>
-      <span id="streakDays">0 days</span>
-      <div class="ring" title="Daily progress">
-        <svg viewBox="0 0 36 36" class="circular-chart">
-          <path class="circle-bg" d="M18 2.0845
-            a 15.9155 15.9155 0 0 1 0 31.831
-            a 15.9155 15.9155 0 0 1 0 -31.831"/>
-          <path id="progressArc" class="circle" stroke-dasharray="0,100" d="M18 2.0845
-            a 15.9155 15.9155 0 0 1 0 31.831
-            a 15.9155 15.9155 0 0 1 0 -31.831"/>
-        </svg>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-globe">Globe</span>
+        <span class="brand-brief">Brief</span>
+      </div>
+      <div class="status">
+        <div class="streak badge" id="streakBadge" title="Daily streak">
+          <span class="emoji">🔥</span><span id="streakCount">0</span> days
+        </div>
+        <div class="ring" id="progressRing" title="Daily minutes">
+          <svg viewBox="0 0 120 120" class="progress-svg" aria-hidden="true">
+            <circle class="bg" cx="60" cy="60" r="52"></circle>
+            <circle class="fg" cx="60" cy="60" r="52" stroke-linecap="round"></circle>
+          </svg>
+          <div class="ring-center"><span id="minutesNow">0</span>/<span id="minutesGoal">10</span>m</div>
+        </div>
       </div>
     </div>
   </header>
 
-  <main class="layout">
-    <aside class="list" id="storyList"></aside>
-    <section class="detail">
-      <article id="storyDetail">
-        <h2 id="storyTitle">Loading…</h2>
-        <p class="meta"><span id="storyBy"></span> • <span id="storyTopic"></span></p>
-        <p id="storySummary" class="summary"></p>
-
-        <div class="controls">
-          <button id="openLink" class="btn" disabled>Open Link</button>
-          <button id="nextBtn" class="btn">Next</button>
-          <label class="toggle">
-            <input id="autoAdvance" type="checkbox" checked />
-            <span>Auto-advance</span>
-          </label>
-          <span class="countdown" id="countdown"></span>
+  <main class="container">
+    <section class="stories">
+      <aside class="toc" id="toc"></aside>
+      <article class="story" id="storyPane">
+        <div class="story-meta">
+          <a id="storyUrl" target="_blank" rel="noopener" class="story-title"></a>
+          <div class="story-byline"><span id="storyAuthor"></span> · <span id="storyTopic"></span></div>
         </div>
+        <div class="story-summary" id="storySummary"></div>
+        <div class="controls">
+          <button id="prevBtn" class="btn subtle">Prev</button>
+          <button id="playPauseBtn" class="btn primary">Play</button>
+          <button id="nextBtn" class="btn subtle">Next</button>
+          <div class="timer"><span id="secondsLeft">0</span>s</div>
+        </div>
+        <div class="micro-feedback" id="microFeedback" aria-hidden="true"></div>
       </article>
+      <aside class="mastery" id="masteryPanel">
+        <h3>Topic mastery</h3>
+        <ul id="masteryList"></ul>
+      </aside>
     </section>
   </main>
 
-  <footer class="foot">
-    <a href="https://github.com/" target="_blank" rel="noreferrer">Powered by static web</a>
-  </footer>
+  <div id="confettiLayer" aria-hidden="true"></div>
 
   <script src="app.js"></script>
 </body>

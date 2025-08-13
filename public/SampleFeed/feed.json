@@ -1,0 +1,30 @@
+{
+  "generatedAt": "2025-08-12T22:00:00Z",
+  "dailyGoalMinutes": 10,
+  "stories": [
+    {
+      "id": "seed-1",
+      "title": "Welcome to Globe Brief",
+      "url": "https://www.boston.com/",
+      "author": "Boston.com Staff",
+      "publishedAt": null,
+      "topic": "Local",
+      "summary": "This is a short sample. Tap Next or wait for auto\u2011advance.",
+      "durationSec": 20,
+      "audioUrl": "",
+      "source": "Boston.com"
+    },
+    {
+      "id": "seed-2",
+      "title": "City Council approves pilot for micro-transit",
+      "url": "https://www.boston.com/",
+      "author": "City Desk",
+      "publishedAt": null,
+      "topic": "Transit",
+      "summary": "A small on-demand shuttle could connect neighborhoods to major bus and rail stops. The six\u2011month pilot starts this fall.",
+      "durationSec": 25,
+      "audioUrl": "",
+      "source": "Boston.com"
+    }
+  ]
+}
