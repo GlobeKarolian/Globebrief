@@ -1,0 +1,101 @@
+/* Minimal, clean styles for the static Globe Brief web app */
+:root{
+  --bg:#0b0e14;
+  --panel:#131826;
+  --panel-2:#0f1421;
+  --text:#e6edf3;
+  --muted:#9fb0c3;
+  --accent:#5aa9ff;
+  --accent-2:#9bffb0;
+  --ringbg:#222a3b;
+  --ring:#69db7c;
+  --shadow: 0 6px 24px rgba(0,0,0,.35);
+  --radius: 18px;
+  --gap: 16px;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:linear-gradient(180deg,var(--bg),#0d1220 50%,var(--bg));
+  color:var(--text);
+  font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+}
+.topbar{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:18px 22px; position:sticky; top:0; z-index:10;
+  background:rgba(11,14,20,.75); backdrop-filter:blur(10px); border-bottom:1px solid #1b2131;
+}
+h1{font-size:22px; margin:0; letter-spacing:.2px}
+.hud{display:flex; align-items:center; gap:14px}
+#streakFlame{font-size:20px}
+#streakDays{color:var(--muted); font-weight:600}
+
+.ring{width:34px; height:34px; display:grid; place-items:center}
+.circular-chart{width:34px; height:34px}
+.circle-bg{fill:none; stroke:var(--ringbg); stroke-width:3.6}
+.circle{fill:none; stroke:var(--ring); stroke-width:3.6; stroke-linecap:round; transition:stroke-dasharray .5s ease}
+
+.layout{
+  display:grid; grid-template-columns: 360px 1fr; gap:var(--gap);
+  padding: var(--gap);
+  max-width: 1200px; margin:0 auto;
+}
+@media (max-width: 900px){
+  .layout{grid-template-columns: 1fr}
+  .list{order:2}
+  .detail{order:1}
+}
+
+.list{
+  background:var(--panel);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:10px;
+  min-height:60vh;
+}
+.item{
+  display:block;
+  padding:12px 14px;
+  background:var(--panel-2);
+  border:1px solid #20273a;
+  border-radius:12px;
+  margin:8px 4px;
+  text-decoration:none;
+  color:var(--text);
+  transition: transform .1s ease, border-color .2s ease;
+}
+.item:hover{transform:translateY(-1px); border-color:#2b3450}
+.item h3{margin:0 0 6px; font-size:15px}
+.item .meta{color:var(--muted); font-size:12px; display:flex; gap:8px}
+
+.detail{
+  background:var(--panel);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:22px;
+  min-height:60vh;
+}
+#storyTitle{margin:.25rem 0 .2rem; font-size:22px; letter-spacing:.2px}
+.meta{color:var(--muted)}
+.summary{
+  background:var(--panel-2);
+  padding:14px;
+  border:1px solid #20273a;
+  border-radius:12px;
+  margin:14px 0 18px;
+  white-space:pre-wrap;
+}
+
+.controls{display:flex; align-items:center; gap:12px; flex-wrap:wrap}
+.btn{
+  appearance:none; border:none; border-radius:999px; padding:10px 14px;
+  background:linear-gradient(180deg,#1e2640,#191f33);
+  color:var(--text); cursor:pointer; font-weight:600; letter-spacing:.2px;
+  border:1px solid #243056;
+}
+.btn:disabled{opacity:.5; cursor:not-allowed}
+.toggle{display:flex; align-items:center; gap:6px; color:var(--muted)}
+.countdown{margin-left:auto; font-variant-numeric:tabular-nums; color:var(--muted)}
+
+.foot{padding:20px; text-align:center; color:var(--muted)}

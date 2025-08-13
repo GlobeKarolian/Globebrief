@@ -1,0 +1,18 @@
+{
+  "generatedAt": "2025-08-12T22:00:00Z",
+  "dailyGoalMinutes": 10,
+  "stories": [
+    {
+      "id": "seed-1",
+      "title": "Welcome to Globe Brief",
+      "url": "https://www.boston.com/",
+      "author": "Boston.com Staff",
+      "publishedAt": null,
+      "topic": "Local",
+      "summary": "This is a short sample (~15\u201320s). Tap Next or wait for auto-advance. Real stories can be fetched and summarized by the ingest service.",
+      "durationSec": 20,
+      "audioUrl": "",
+      "source": "Boston.com"
+    }
+  ]
+}
